@@ -39,17 +39,9 @@ public class ScreenLineRenderer : MonoBehaviour {
             start = new Vector3(0.5f,0.0f,0.0f);
             end = new Vector3(0.5f, 1.0f, 0.0f);
             //dragging = true;
-            print(cam.ScreenToViewportPoint(Input.mousePosition));
+            //print(cam.ScreenToViewportPoint(Input.mousePosition));
             split = false;
-        }
-
-        if (dragging)
-        {
-            
-        }
-
-        if (Input.GetMouseButtonUp(0) && !MouseSlice.slicedAny)
-        {
+        
             // Finished dragging. We draw the line segment
             //end = cam.ScreenToViewportPoint(Input.mousePosition);
             dragging = false;

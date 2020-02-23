@@ -63,23 +63,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraMove.cs" />
-    <Compile Include="Assets\LeftTrapDoor.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\CameraControls.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Icosphere FFT\Scripts\IcoBumpin.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Misc\HueCube.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
-    <Compile Include="Assets\RightTrapDoor.cs" />
+    <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\CameraOrbit.cs" />
+    <Compile Include="Assets\Scripts\DifferenceCalculator.cs" />
     <Compile Include="Assets\Scripts\DrawBounds.cs" />
+    <Compile Include="Assets\Scripts\LeftTrapDoor.cs" />
     <Compile Include="Assets\Scripts\MeshCutting\Intersections.cs" />
     <Compile Include="Assets\Scripts\MeshCutting\MeshCutter.cs" />
     <Compile Include="Assets\Scripts\MeshCutting\MeshUtils.cs" />
     <Compile Include="Assets\Scripts\MeshCutting\TempMesh.cs" />
     <Compile Include="Assets\Scripts\MouseSlice.cs" />
     <Compile Include="Assets\Scripts\ObjectManager.cs" />
+    <Compile Include="Assets\Scripts\RightTrapDoor.cs" />
+    <Compile Include="Assets\Scripts\Scale.cs" />
     <Compile Include="Assets\Scripts\ScreenLineRenderer.cs" />
     <Compile Include="Assets\Scripts\SlicableObject.cs" />
     <None Include="Assets\ProCore\ProBuilder\Shader\pb_TransparentOverlay.shader" />

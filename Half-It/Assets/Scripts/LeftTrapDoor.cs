@@ -13,7 +13,6 @@ public class LeftTrapDoor : MonoBehaviour
             {
                 z -= Time.deltaTime * 40;
                 transform.rotation = Quaternion.Euler(0, 0, z);
-                print(z);
             }
         }
     }
