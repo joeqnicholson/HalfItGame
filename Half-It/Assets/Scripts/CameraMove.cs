@@ -20,6 +20,7 @@ public class CameraMove : MonoBehaviour
     }
     void Update()
     {
+        
         if (MouseSlice.slicedAny)
         {
             // Distance moved equals elapsed time times speed..
@@ -28,7 +29,7 @@ public class CameraMove : MonoBehaviour
             // Fraction of journey completed equals current distance divided by total distance.
             float fractionOfJourney = distCovered / journeyLength;
 
-            transform.position = Vector3.Lerp(transform.position, scaleSpot, fractionOfJourney * Time.deltaTime * 5);
+            transform.position = Vector3.Lerp(transform.position, scaleSpot, fractionOfJourney * Time.deltaTime * 2);
         }
         
     }

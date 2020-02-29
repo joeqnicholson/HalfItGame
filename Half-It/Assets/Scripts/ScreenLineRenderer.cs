@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.iOS;
 
 public class ScreenLineRenderer : MonoBehaviour {
 
@@ -34,7 +35,8 @@ public class ScreenLineRenderer : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetMouseButtonDown(0) && !MouseSlice.slicedAny)
+        //if (Input.touchCount > 0 && !MouseSlice.slicedAny)
+        if(Input.GetButtonDown("Fire1") && !MouseSlice.slicedAny)
         {
             start = new Vector3(0.5f,0.0f,0.0f);
             end = new Vector3(0.5f, 1.0f, 0.0f);

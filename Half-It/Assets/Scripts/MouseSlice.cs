@@ -6,7 +6,7 @@ public class MouseSlice : MonoBehaviour {
     public GameObject plane;
     public Transform ObjectContainer;
     public static bool slicedAny;
-
+    bool seperate;
     // How far away from the slice do we separate resulting objects
     public float separation;
 
@@ -19,6 +19,8 @@ public class MouseSlice : MonoBehaviour {
 
     private MeshCutter meshCutter;
     private TempMesh biggerMesh, smallerMesh;
+    Transform pos;
+    Transform neg;
 
     #region Utility Functions
 
@@ -38,6 +40,13 @@ public class MouseSlice : MonoBehaviour {
         // Initialize a somewhat big array so that it doesn't resize
         meshCutter = new MeshCutter(256);
 	}
+    private void Update()
+    {
+        if(seperate == true)
+        {
+            MeshMover(pos, neg);
+        }
+    }
 
     private void OnEnable()
     {
@@ -173,16 +182,42 @@ public class MouseSlice : MonoBehaviour {
         posTransform.position += separationVec;
         negTransform.position -= separationVec;
     }
+    void MeshMover(Transform positiveGO, Transform negativeGO)
+    {
+        if (!SlicableObject.hitScale)
+        {
+            if (positiveGO.transform.position.x > -2.3f)
+            {
+                positiveGO.transform.position = Vector3.Lerp(positiveGO.transform.position, -Vector3.right * 2.4f, 1.0f * Time.deltaTime);
+            }
+
+            if (negativeGO.transform.position.x < 2.8f)
+            {
+                negativeGO.transform.position = Vector3.Lerp(negativeGO.transform.position, Vector3.right * 2.9f, 1.0f * Time.deltaTime);
+            }
+        }
+        
+
+            
+    }
 
     void SeparateMeshes(List<Transform> positives, List<Transform> negatives, Vector3 worldPlaneNormal)
     {
-        int i;
+        //int i;
         var separationVector = worldPlaneNormal * separation;
 
-        for(i = 0; i <positives.Count; ++i)
-            positives[i].transform.position += separationVector;
+        seperate = true;
+        pos = positives[0];
+        neg = negatives[0];
 
-        for (i = 0; i < negatives.Count; ++i)
-            negatives[i].transform.position -= separationVector;
+        //positives[0].transform.position = Vector3.Lerp(positives[0].transform.position, Vector3.up * 9, 5.0f * Time.deltaTime);
+        //negatives[0].transform.position = Vector3.Lerp(negatives[0].transform.position, -separationVector, 5.0f * Time.deltaTime);
+
+
+        //for(i = 0; i <positives.Count; ++i)
+        //    positives[i].transform.position += separationVector;
+
+        //for (i = 0; i < negatives.Count; ++i)
+        //    negatives[i].transform.position -= separationVector;
     }
 }
